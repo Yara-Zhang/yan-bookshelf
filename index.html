@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-<title>燕书阁 · Poison Genius Consort 2</title>
+<title>Yara's Study · Poison Genius Consort 2</title>
 <style>
   :root {
     --bg: #F7F4F2;
@@ -23,12 +23,12 @@
   body {
     background: var(--bg);
     color: var(--ink);
-    font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", -apple-system, sans-serif;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, "PingFang SC", sans-serif;
     overflow-x: hidden;
   }
   ::selection { background: var(--pink); }
 
-  /* ============ 书架页 ============ */
+  /* ============ Shelf ============ */
   #shelf { min-height: 100vh; display: flex; flex-direction: column; }
   .hero {
     text-align: center;
@@ -48,25 +48,27 @@
   .hero::after { bottom: -20px; right: -60px; }
   .hero .seal {
     display: inline-block;
-    font-size: 13px; letter-spacing: 6px;
+    font-size: 12px; letter-spacing: 4px;
     color: var(--accent);
     border: 1px solid rgba(212,42,42,.35);
-    padding: 4px 14px 4px 20px;
+    padding: 4px 12px 4px 16px;
     border-radius: 2px;
     margin-bottom: 18px;
+    font-weight: 500;
   }
   .hero h1 {
     font-size: clamp(26px, 5vw, 40px);
     font-weight: 600;
     color: var(--crimson-deep);
-    letter-spacing: 2px;
-    font-family: "Songti SC", "STSong", "SimSun", Georgia, serif;
+    letter-spacing: .5px;
+    font-family: Georgia, "Times New Roman", "Songti SC", serif;
+    line-height: 1.25;
   }
   .hero .sub {
     margin-top: 12px;
     color: var(--ink-soft);
-    font-size: 15px;
-    letter-spacing: 1px;
+    font-size: 14px;
+    letter-spacing: 1.5px;
   }
   .hero .divider {
     width: 72px; height: 2px;
@@ -127,9 +129,10 @@
     position: absolute; top: 8px; left: 8px;
     background: rgba(92,26,26,.78);
     color: #F5E9E0;
-    font-size: 11px; letter-spacing: 1px;
-    padding: 3px 9px; border-radius: 3px;
+    font-size: 10px; letter-spacing: 1px;
+    padding: 3px 8px; border-radius: 3px;
     backdrop-filter: blur(2px);
+    text-transform: uppercase;
   }
   .card .badge.done { background: rgba(46,110,84,.85); }
   .card .progress-line {
@@ -137,11 +140,11 @@
     background: var(--accent);
   }
   .card .info { padding: 12px 14px 14px; flex: 1; display: flex; flex-direction: column; }
-  .card .vol { font-size: 12px; color: var(--ink-soft); letter-spacing: 2px; }
+  .card .vol { font-size: 11px; color: var(--ink-soft); letter-spacing: 1.5px; text-transform: uppercase; }
   .card .name {
     margin-top: 4px;
     font-size: 14px; font-weight: 600; color: var(--ink);
-    font-family: "Songti SC", Georgia, serif;
+    font-family: Georgia, "Times New Roman", serif;
     overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
   }
   .card .pct { margin-top: 6px; font-size: 12px; color: var(--crimson); }
@@ -149,10 +152,10 @@
 
   footer {
     text-align: center; padding: 28px 20px 40px;
-    color: var(--ink-soft); font-size: 12px; letter-spacing: 1px;
+    color: var(--ink-soft); font-size: 12px; letter-spacing: 1.5px;
   }
 
-  /* ============ 阅读器 ============ */
+  /* ============ Reader ============ */
   #reader {
     position: fixed; inset: 0; z-index: 100;
     background: var(--paper);
@@ -182,7 +185,7 @@
     flex: 1; text-align: center;
     font-size: 15px; font-weight: 600; color: var(--crimson-deep);
     overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
-    font-family: "Songti SC", Georgia, serif;
+    font-family: Georgia, "Times New Roman", serif;
   }
   .topbar .title .vol-tag { color: var(--ink-soft); font-weight: 400; font-size: 12px; margin-left: 6px; }
 
@@ -214,7 +217,7 @@
   .tapzone.left { left: 0; }
   .tapzone.right { right: 0; }
 
-  /* 目录抽屉 */
+  /* TOC drawer */
   #toc-panel {
     position: fixed; top: 0; bottom: 0; left: 0; z-index: 200;
     width: min(320px, 82vw);
@@ -249,7 +252,7 @@
   }
   #toc-mask.show { display: block; }
 
-  /* 阅读主题：纸张/夜间 */
+  /* Reader theme: paper / night */
   #reader.night { --paper: #2B2422; background: #2B2422; }
   #reader.night .topbar { background: #241E1C; border-bottom-color: #3D3430; }
   #reader.night .topbar .btn { background: #332B28; color: #E8D9D2; border-color: #453B37; }
@@ -277,12 +280,12 @@
 </head>
 <body>
 
-<!-- ============ 书架 ============ -->
+<!-- ============ Shelf ============ -->
 <div id="shelf">
   <div class="hero">
-    <div class="seal">燕 书 阁</div>
+    <div class="seal">YARA'S STUDY</div>
     <h1>Poison Genius Consort 2<br>Emperor&rsquo;s Swallow</h1>
-    <div class="sub">Jie Mo · 古风言情 · 全十一卷</div>
+    <div class="sub">BY JIE MO &middot; ANCIENT ROMANCE &middot; COMPLETE IN 11 VOLUMES</div>
     <div class="divider"></div>
   </div>
 
@@ -293,24 +296,24 @@
         <div class="ct" id="cont-title"></div>
         <div class="cp" id="cont-pct"></div>
       </div>
-      <div class="go">继续阅读 →</div>
+      <div class="go">Continue Reading &rarr;</div>
     </div>
   </div>
 
   <div class="grid" id="grid"></div>
 
-  <footer>燕书阁 · Yara 的选书房 · 静心赏卷</footer>
+  <footer>YARA'S STUDY &middot; A QUIET PLACE FOR GOOD BOOKS</footer>
 </div>
 
-<!-- ============ 阅读器 ============ -->
+<!-- ============ Reader ============ -->
 <div id="reader">
   <div class="topbar">
-    <button class="btn" id="btn-back">← 书架</button>
-    <button class="btn" id="btn-toc">目录</button>
+    <button class="btn" id="btn-back">&larr; Shelf</button>
+    <button class="btn" id="btn-toc">Contents</button>
     <div class="title"><span id="rd-title">…</span><span class="vol-tag" id="rd-vol"></span></div>
-    <button class="btn" id="btn-fontminus" title="缩小字号">A-</button>
-    <button class="btn" id="btn-fontplus" title="放大字号">A+</button>
-    <button class="btn" id="btn-theme" title="切换夜间模式">🌙</button>
+    <button class="btn" id="btn-fontminus" title="Smaller text">A-</button>
+    <button class="btn" id="btn-fontplus" title="Larger text">A+</button>
+    <button class="btn" id="btn-theme" title="Toggle night mode">🌙</button>
   </div>
 
   <div id="viewer">
@@ -325,10 +328,10 @@
   </div>
 </div>
 
-<!-- 目录抽屉 -->
+<!-- TOC drawer -->
 <div id="toc-mask"></div>
 <div id="toc-panel">
-  <div class="toc-head"><span>目录</span><span class="close" id="toc-close">✕</span></div>
+  <div class="toc-head"><span>Contents</span><span class="close" id="toc-close">✕</span></div>
   <div class="toc-list" id="toc-list"></div>
 </div>
 
@@ -339,7 +342,7 @@
 <script>
   const BOOKS = [];
   for (let i = 1; i <= 11; i++) {
-    BOOKS.push({ vol: i, file: `books/vol${i}.epub`, cover: `books/cover${i}.jpeg`, title: `Emperor's Swallow Vol${i}` });
+    BOOKS.push({ vol: i, file: `books/vol${i}.epub`, cover: `books/cover${i}.jpeg`, title: `Emperor's Swallow · Vol ${i}` });
   }
   const SERIES = "Poison Genius Consort 2";
 
@@ -351,7 +354,7 @@
     font: 'pgc2-font'
   };
 
-  // ---------- 书架渲染 ----------
+  // ---------- Shelf rendering ----------
   const grid = document.getElementById('grid');
   function renderShelf() {
     grid.innerHTML = '';
@@ -362,27 +365,27 @@
       card.className = 'card';
       card.innerHTML = `
         <div class="cover-wrap">
-          <img src="${b.cover}" alt="Vol${b.vol}" loading="lazy">
-          ${done ? '<span class="badge done">已读完</span>' : (pct > 0 ? `<span class="badge">读至 ${Math.floor(pct)}%</span>` : '')}
+          <img src="${b.cover}" alt="Vol ${b.vol}" loading="lazy">
+          ${done ? '<span class="badge done">Finished</span>' : (pct > 0 ? `<span class="badge">At ${Math.floor(pct)}%</span>` : '')}
           <div class="progress-line" style="width:${pct}%"></div>
         </div>
         <div class="info">
-          <div class="vol">第 ${b.vol} 卷</div>
+          <div class="vol">Volume ${b.vol}</div>
           <div class="name">${b.title}</div>
-          <div class="pct ${pct > 0 ? '' : 'zero'}">${pct > 0 ? Math.floor(pct) + '%' : '未开始'}</div>
+          <div class="pct ${pct > 0 ? '' : 'zero'}">${pct > 0 ? Math.floor(pct) + '% read' : 'Not started'}</div>
         </div>`;
       card.addEventListener('click', () => openBook(b.vol));
       grid.appendChild(card);
     });
-    // 继续阅读卡片
+    // Continue-reading card
     const last = localStorage.getItem(LS.last);
     const cc = document.getElementById('continue-card');
     if (last !== null) {
       const b = BOOKS[parseInt(last) - 1];
       const pct = parseFloat(localStorage.getItem(LS.pct(b.vol)) || 0);
       document.getElementById('cont-cover').src = b.cover;
-      document.getElementById('cont-title').textContent = `${SERIES} · 第 ${b.vol} 卷`;
-      document.getElementById('cont-pct').textContent = pct > 0 ? `已读 ${Math.floor(pct)}%，点击继续` : '开始第一页';
+      document.getElementById('cont-title').textContent = `${SERIES} · Volume ${b.vol}`;
+      document.getElementById('cont-pct').textContent = pct > 0 ? `${Math.floor(pct)}% read — pick up where you left off` : 'Start from page one';
       cc.classList.add('show');
       cc.onclick = () => openBook(b.vol);
     } else {
@@ -392,7 +395,7 @@
   }
   renderShelf();
 
-  // ---------- 阅读器 ----------
+  // ---------- Reader ----------
   const readerEl = document.getElementById('reader');
   let book = null, rendition = null, curVol = 1, fontSize = parseFloat(localStorage.getItem(LS.font) || 17);
 
@@ -402,8 +405,8 @@
     readerEl.classList.add('open');
     document.body.style.overflow = 'hidden';
     document.getElementById('rd-title').textContent = SERIES;
-    document.getElementById('rd-vol').textContent = `· 第 ${vol} 卷`;
-    document.getElementById('rd-pct').textContent = '加载中…';
+    document.getElementById('rd-vol').textContent = `· Volume ${vol}`;
+    document.getElementById('rd-pct').textContent = 'Loading…';
 
     if (rendition) { rendition.destroy(); }
     if (book) { book.destroy(); }
@@ -420,7 +423,7 @@
     const saved = localStorage.getItem(LS.cfi(vol));
     rendition.display(saved || undefined);
 
-    // 目录
+    // TOC
     book.loaded.navigation.then(nav => {
       const list = document.getElementById('toc-list');
       list.innerHTML = '';
@@ -428,7 +431,7 @@
         const div = document.createElement('div');
         div.className = 'toc-item';
         div.style.paddingLeft = (18 + depth * 14) + 'px';
-        div.textContent = it.label.trim() || '(无标题)';
+        div.textContent = it.label.trim() || '(Untitled)';
         div.addEventListener('click', () => {
           rendition.display(it.href);
           closeToc();
@@ -439,14 +442,14 @@
       flatten(nav.toc, 0);
     });
 
-    // 进度
+    // Progress
     rendition.on('relocated', loc => {
       const pct = loc.start ? loc.start.percentage : (loc.percentage || 0);
       if (pct !== undefined && pct !== null && !isNaN(pct)) {
         localStorage.setItem(LS.pct(vol), (pct * 100).toFixed(1));
         localStorage.setItem(LS.cfi(vol), loc.start.cfi);
         document.getElementById('rd-pct').textContent =
-          `第 ${Math.floor(pct * 100)}% · 第 ${loc.start.displayed.page + 1}/${loc.start.displayed.total} 页`;
+          `${Math.floor(pct * 100)}% · Page ${loc.start.displayed.page + 1} of ${loc.start.displayed.total}`;
       }
     });
 
@@ -455,14 +458,13 @@
       if (e.key === 'ArrowRight') rendition.next();
     });
 
-    // 首页进度条修正：进度变化时刷新书架（返回时体现）
     rendition.on('rendered', () => {
       const cur = rendition.currentLocation();
       if (cur && cur.start && cur.start.percentage != null) {
         localStorage.setItem(LS.pct(vol), (cur.start.percentage * 100).toFixed(1));
         localStorage.setItem(LS.cfi(vol), cur.start.cfi);
         document.getElementById('rd-pct').textContent =
-          `第 ${Math.floor(cur.start.percentage * 100)}% · 第 ${cur.start.displayed.page + 1}/${cur.start.displayed.total} 页`;
+          `${Math.floor(cur.start.percentage * 100)}% · Page ${cur.start.displayed.page + 1} of ${cur.start.displayed.total}`;
       }
     });
   }
@@ -476,7 +478,7 @@
     rendition = null; book = null;
   }
 
-  // ---------- 控制 ----------
+  // ---------- Controls ----------
   document.getElementById('btn-back').addEventListener('click', closeBook);
   document.getElementById('btn-prev').addEventListener('click', () => rendition && rendition.prev());
   document.getElementById('btn-next').addEventListener('click', () => rendition && rendition.next());
@@ -497,7 +499,7 @@
       'p': { 'font-size': fontSize + 'px !important', 'line-height': '1.9 !important' }
     });
     localStorage.setItem(LS.font, fontSize);
-    if (!silent) toast('字号 ' + fontSize + 'px');
+    if (!silent) toast('Font size ' + fontSize + 'px');
   }
   document.getElementById('btn-fontplus').addEventListener('click', () => {
     if (fontSize < 26) { fontSize += 1; applyFont(); }
@@ -514,14 +516,14 @@
       rendition.themes.register('night', { 'body': { 'color': '#D8CCC5 !important', 'background': '#2B2422 !important' } });
       rendition.themes.select(night ? 'night' : 'default');
     }
-    if (!silent) toast(night ? '夜间模式' : '日间模式');
+    if (!silent) toast(night ? 'Night mode' : 'Day mode');
   }
   document.getElementById('btn-theme').addEventListener('click', () => {
     localStorage.setItem(LS.theme, localStorage.getItem(LS.theme) === 'night' ? 'day' : 'night');
     applyTheme();
   });
 
-  // ---------- 目录抽屉 ----------
+  // ---------- TOC drawer ----------
   const tocPanel = document.getElementById('toc-panel');
   const tocMask = document.getElementById('toc-mask');
   function closeToc() { tocPanel.classList.remove('open'); tocMask.classList.remove('show'); }
@@ -539,9 +541,6 @@
     clearTimeout(toastTimer);
     toastTimer = setTimeout(() => t.classList.remove('show'), 1600);
   }
-
-  // 高亮当前章节（简单版：监听 relocated 更新 toc active）
-  document.getElementById('rd-pct').addEventListener('DOMSubtreeModified', () => {});
 </script>
 </body>
 </html>
